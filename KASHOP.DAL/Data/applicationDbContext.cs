@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KASHOP.DAL
+namespace KASHOP.DAL.Data
 {
     public class ApplicationDbContext : DbContext
     {

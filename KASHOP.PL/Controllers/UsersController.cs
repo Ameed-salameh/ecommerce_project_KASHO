@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using KASHOP.DAL;
+using KASHOP.DAL.Data;
 namespace KASHOP.PL.Controllers
 {
     [Route("api/[controller]")]
@@ -15,13 +15,12 @@ namespace KASHOP.PL.Controllers
                 }
 
 
-        //public IActionResult index()
-        //{
+        public IActionResult index()
+        {
 
-        //    var users = _context.Users.ToList();
-        //    return Ok(users);
+            return Ok();
 
-        //}
+        }
 
     }
 

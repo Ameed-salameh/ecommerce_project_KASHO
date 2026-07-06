@@ -1,5 +1,4 @@
-
-using KASHOP.DAL;
+using KASHOP.DAL.Data;
 using Microsoft.EntityFrameworkCore;
 namespace KASHOP.PL
 {
@@ -15,9 +14,10 @@ namespace KASHOP.PL
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
 
+
              builder.Services.AddDbContext<ApplicationDbContext>(options =>
              {
-                 options.UseSqlServer("connection string ");
+                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
              });
 
 
