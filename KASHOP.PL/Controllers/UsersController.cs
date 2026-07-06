@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using KASHOP.DAL.Data;
+using Microsoft.Extensions.Localization;
 namespace KASHOP.PL.Controllers
 {
     [Route("api/[controller]")]
@@ -17,7 +18,7 @@ namespace KASHOP.PL.Controllers
 
         public IActionResult index()
         {
-
+            var users = _context.categories.ToList();
             return Ok();
 
         }
