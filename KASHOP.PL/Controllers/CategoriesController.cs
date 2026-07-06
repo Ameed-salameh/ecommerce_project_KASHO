@@ -4,6 +4,7 @@ using KASHOP.DAL.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Mapster;
+using Microsoft.EntityFrameworkCore;
 namespace KASHOP.PL.Controllers
 {
     [Route("api/[controller]")]
@@ -19,13 +20,20 @@ namespace KASHOP.PL.Controllers
         }
 
 
-        public IActionResult index()
+        [HttpGet("")]
+        public IActionResult Index()
         {
-            var categories = _context.categories.ToList();
-            return Ok(categories);
+            var categories = _context.categories.Include(c => c.Translations).ToList();
+
+            var response = categories.Adapt<List<CategoryResponse>>();
+
+            return Ok(response);
         }
 
-        [HttpPost]
+
+
+
+        [HttpPost("")]
         public IActionResult create(CategoryRequest request)
         {
             var category = request.Adapt<Category>();

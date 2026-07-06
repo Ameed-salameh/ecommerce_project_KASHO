@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KASHOP.DAL.Models
+namespace KASHOP.DAL.Dto
 {
-    public class CategoryTranslation
+    public class CategoryTranslationResponse
     {
-        public int Id { get; set; }
+
         public string Name { get; set; }
         public string language { get; set; }
-        public int CategoryId { get; set; }
-        public Category Category { get; set; }
     }
 }
