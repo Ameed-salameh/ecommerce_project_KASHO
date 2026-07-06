@@ -8,6 +8,7 @@ namespace KASHOP.DAL.Models
 {
     public class CategoryTranslation
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string langouage { get; set; }
         public int CategoryId { get; set; }
